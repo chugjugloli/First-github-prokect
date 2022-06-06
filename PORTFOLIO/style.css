@@ -62,7 +62,7 @@ section:nth-child(even){
     margin-bottom: 20px;
 }
 
-a{
+#about-me a {
     text-decoration: none;
     position: relative;
     transition: opacity 300ms ease;
@@ -317,12 +317,10 @@ nav {
     margin-bottom: 40px;
 }
 
-.project__img{
+.project__image{
     width:100%;
     transition: all 500ms ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: -5;
 }
 
 .project__wrapper{
@@ -340,7 +338,7 @@ nav {
     left:0;
     height:100%;
     width:100%;
-    background-color: #1c1d25;
+    background-color: red;
     opacity:0;
     transition: opacity 450ms ease;
 }
