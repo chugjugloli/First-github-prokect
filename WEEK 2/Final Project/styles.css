@@ -1,0 +1,22 @@
+
+.row{
+    width:100%;
+    margin: 12px;
+}
+
+nav li{
+    text-decoration: none;
+}
+
+
+/* NAV BAR */
+
+.nav__company--name{
+    font-weight: 700px;
+    font-size: 24px;
+
+}
+
+.link__hover-effect--purple:after{
+    background-color: black;
+}
