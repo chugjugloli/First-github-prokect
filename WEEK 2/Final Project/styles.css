@@ -12,18 +12,20 @@
     margin:0;
     padding:32px;
 }
+
 .container{
     padding: 80px 0;
 }
 
 .row{
     width:100%;
-    max-width: 1200px;
-    margin: auto 0;
+    max-width: 1360px;
+    margin: 0 auto;
 }
 
 a{
     text-decoration:none;
+    color:black;
 }
 
 a:hover{
@@ -40,14 +42,15 @@ a:hover{
 /* NAV BAR */
 
 nav{
-    height:80px;
+    height:60px;
     width:100%;
 }
 
 .nav__container{
-    width:100%;
+    width:90%;
     list-style-type: none;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     color:#243E63;
 }
@@ -55,32 +58,34 @@ nav{
 .nav__company{
     display: flex;
     align-items: center;
+    padding-left:11%;
 }
 
 .nav__company--logo{
     width:50px;
     height:50px;
     margin-right:16px;
+    
 }
 
 .nav__company--text{
-    font-size:24px;
+    font-size:32px;
     font-weight:900;
     padding-bottom: 4px;
+    padding-right:32px;
 }
 
 .nav__links{
     list-style-type: none;
     display: flex;
     align-items: center;
-    margin-left:21%;
     font-size: 20px;
     font-weight: 500;
     justify-content: center;
 }
 
 .nav__link{
-    margin: 0px 24px;
+    margin: 0px 28px;
     padding: 0 0 4px;
     color:#243E63;
 }
@@ -96,14 +101,50 @@ nav{
     margin:0 12px;
     color:#242424;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .nav__link--anchor-primary{
     background-color:#6415FF;
-    padding: 12px 32px; 
+    padding: 15px 40px; 
     border-radius: 50px;
     transition: all 300ms ease;
+}
+
+.landing__box{
+    padding-top:50px;
+    display: flex;
+    width:100%;
+}
+
+.landing__column1{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing__column1--heading{
+    font-size: 48px;
+}
+
+.landing__heading--text{
+    
+}
+
+.landing__column1--para{
+    
+}
+
+.landing__column1--email{
+
+}
+
+.landing__column2{
+    width:60%;
+}
+
+.landing__img{
+    width:60%;
 }
 
 
@@ -115,6 +156,9 @@ nav{
 
 
 
+.space{
+    padding-top:1500px;
+}
 
 
 @media (max-width:1248px){
