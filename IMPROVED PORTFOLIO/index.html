@@ -115,7 +115,7 @@
                 <form id="contact__form" action="">
                     <div class="form__item">
                         <label class="form__item--label" >Name</label>
-                        <input type="text" name="user_name" class="input" required>
+                        <input required type="text" name="user_name" class="input" required>
                     </div>
                     <div class="form__item">
                         <label class="form__item--label" >Email</label>
@@ -123,13 +123,20 @@
                     </div>
                     <div class="form__item">
                         <label class="form__item--label" >Message</label>
-                        <textarea type="text" name="user_message" class="input" required>
+                        <textarea type="text" name="user_message" class="input" required></textarea>
                     </div>
-                    <button id="contact__submit" class="form__submit">
+                    <button required id="contact__submit" class="form__submit">
                         Send it my way!
                     </button>
                 </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon!
+                </div>
             </div>
+            <i class="fas fa-times modal__exit click"></i>
         </div>
     </section>
     <section id="projects">
