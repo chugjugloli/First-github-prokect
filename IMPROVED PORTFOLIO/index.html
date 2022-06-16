@@ -106,7 +106,29 @@
                 </div>
             </div>
             <div class="modal__half modal__contact">
-                Let's have a chat!
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">
+                    I am currently open to new opportunities, and would love to meet you!
+                </h4>
+                <form id="contact__form" action="">
+                    <div class="form__item">
+                        <label class="form__item--label" >Name</label>
+                        <input type="text" name="user_name" class="input" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" >Email</label>
+                        <input type="text" name="user_email" class="input" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" >Message</label>
+                        <textarea type="text" name="user_message" class="input" required>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my way!
+                    </button>
+                </form>
             </div>
         </div>
     </section>
