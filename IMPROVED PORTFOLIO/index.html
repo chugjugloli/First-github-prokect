@@ -7,6 +7,15 @@
     <title>Caden Allen</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("r3iHZZJ-BJdrk0Yqh");
+        })();
+    </script>
 </head>
 <body>
     <section id="landing-page">
@@ -112,7 +121,7 @@
                 <h4 class="modal__sub-title modal__sub-title--contact">
                     I am currently open to new opportunities, and would love to meet you!
                 </h4>
-                <form id="contact__form" action="">
+                <form id="contact__form" onsubmit="contact()">
                     <div class="form__item">
                         <label class="form__item--label" >Name</label>
                         <input required type="text" name="user_name" class="input" required>

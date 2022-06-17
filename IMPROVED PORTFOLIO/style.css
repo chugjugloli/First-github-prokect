@@ -381,13 +381,17 @@ textarea{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: -1;
 }
 .modal__overlay--loading{
     background-color: #242424;
     font-size: 80px;
-    z-index: -1;
+    
 }
 
+.modal__overlay--visible{
+    z-index: 1;
+}
 .modal__overlay--success{
     background: #4bb543;
     font-size:40px;
@@ -536,5 +540,3 @@ footer{
 }
 
 
-
-/* 1:54:30 */
