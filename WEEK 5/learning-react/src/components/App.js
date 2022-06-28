@@ -15,7 +15,7 @@ function App() {
 export default App
 */
 
-
+/*
 import React from "react"
 
 import Header from './Header'
@@ -35,28 +35,27 @@ function App() {
 
 export default App
 
+*/
+
 
 /*
 import React from "react"
 
+import TodoItem from "./TodoItem"
+import './style.css'
+
 function App() {
     return (
-    <div>
-        <input type="checkbox"></input>
-        <p>Sup</p>
-
-        <input type="checkbox"></input>
-        <p>Sup</p>
-
-        <input type="checkbox"></input>
-        <p>Sup</p>
-
-        <input type="checkbox"></input>
-        <p>Sup</p>
-    </div>
+        <div className="list">
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
+        </div>
     )
 }
 
 export default App
-
 */
+
+
