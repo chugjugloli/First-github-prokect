@@ -1,11 +1,11 @@
 import React from "react"
 
-function NavBar() {
+function Header() {
     return (
-        <header className="">
+        <header className="navbar">
             This is the header
         </header>
     )
 }
 
-export default NavBar
+export default Header

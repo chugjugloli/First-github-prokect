@@ -2,7 +2,7 @@ import React from "react"
 
 function MainContent() {
     return (
-        <main>
+        <main className="main">
             This is the main section
         </main>
     )

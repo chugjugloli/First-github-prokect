@@ -18,7 +18,7 @@ export default App
 
 import React from "react"
 
-import NavBar from './NavBar'
+import Header from './Header'
 import MainContent from './MainContent'
 import Footer from './Footer'
 
@@ -26,7 +26,7 @@ import Footer from './Footer'
 function App() {
     return (
         <div>
-            <NavBar />
+            <Header />
             <MainContent />
             <Footer />
         </div>
