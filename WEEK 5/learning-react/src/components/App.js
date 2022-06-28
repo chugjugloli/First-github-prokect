@@ -58,4 +58,71 @@ function App() {
 export default App
 */
 
+/*
+import React from "react"
+import ContactCard from "./ContactCard"
+
+function App() {
+    return (
+        <div>
+            <ContactCard
+                name="Cat1"
+                phone="864"
+                email="cat1@cat"
+            />
+            <ContactCard 
+                name="Cat2"
+                phone="4123"
+                email="cat2@cat"
+            />
+            <ContactCard 
+                name="Cat3"
+                phone="213"
+                email="cat3@cat"
+            />
+            <ContactCard 
+                name="Cat4"
+                phone="3421"
+                email="cat4@cat"
+            />
+            
+        </div>
+    )
+}
+
+export default App
+
+*/
+
+import React from "react"
+import Joke from "./Joke"
+
+function App() {
+    return (
+        <div>
+            <Joke
+                question = "joke1"
+                punchline = "punchline1"
+            />
+            <Joke
+                question = "joke2"
+                punchline = "punchline2"
+            />
+            <Joke
+                question = "joke3"
+                punchline = "punchline3"
+            />
+            <Joke
+                question = "joke4"
+                punchline = "punchline4"
+            />
+            <Joke
+                question = "joke5"
+                punchline = "punchline5"
+            />
+        </div>
+    )
+}
+
+export default App
 
