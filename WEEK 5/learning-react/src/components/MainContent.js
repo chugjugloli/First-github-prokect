@@ -3,7 +3,7 @@ import React from "react"
 function MainContent() {
     return (
         <main>
-            This took awhile
+            This is the main section
         </main>
     )
 }

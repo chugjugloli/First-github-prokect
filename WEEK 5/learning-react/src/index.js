@@ -44,8 +44,8 @@ ReactDOM.render(<MyInfo />, document.getElementById("root"))
 import React from "react"
 import ReactDOM from "react-dom"
 
-import App1 from "./components/App1"
-ReactDOM.render(<App1 />, document.getElementById("root"))
+import App from "./components/App"
+ReactDOM.render(<App />, document.getElementById("root"))
 
 */
 
@@ -53,9 +53,18 @@ ReactDOM.render(<App1 />, document.getElementById("root"))
 import React from "react"
 import ReactDOM from "react-dom"
 
-import App2 from './components/App2'
+import App from './components/App'
 
-ReactDOM.render(<App2 />, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"))
 
 
-//48:17
+
+
+/*
+import React from "react"
+import ReactDOM from "react-dom"
+
+import App from './components/App'
+
+ReactDOM.render(<App />, document.getElementById("root"))
+*/

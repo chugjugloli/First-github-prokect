@@ -2,9 +2,9 @@ import React from "react"
 
 function NavBar() {
     return (
-        <nav>
-            sup
-        </nav>
+        <header className="">
+            This is the header
+        </header>
     )
 }
 
