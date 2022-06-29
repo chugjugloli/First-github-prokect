@@ -5,11 +5,12 @@ body {
 .list {
     font-size: 20px;
     color: orange;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .item {
     color: red;
+}
+
+.complete {
+    text-decoration:line-through;
 }

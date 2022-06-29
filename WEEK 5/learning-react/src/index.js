@@ -132,6 +132,8 @@ import App from "./components/App"
 ReactDOM.render(<App />, document.getElementById("root"))
 */
 
+/*
+
 import React from "react"
 import ReactDOM from "react-dom"
 
@@ -139,4 +141,14 @@ import App from "./components/App"
 
 ReactDOM.render(<App />, document.getElementById("root"))
 
-//1:40:28
+*/
+
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+import App from "./components/App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+//2:40:00

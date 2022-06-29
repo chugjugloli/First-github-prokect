@@ -37,25 +37,34 @@ export default App
 
 */
 
-
 /*
 import React from "react"
-
 import TodoItem from "./TodoItem"
+import todosData from "./todosData"
 import './style.css'
 
-function App() {
-    return (
-        <div className="list">
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
-        </div>
-    )
+class App extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            todoComponents: todosData.map(item => <TodoItem key={item.id} item={item}/>)
+        }
+    }
+
+
+    render(){
+
+        return (
+            <div className="list">
+                {this.state.todoComponents}
+            </div>
+        )
+    }
+    
 }
 
 export default App
+
 */
 
 /*
@@ -94,6 +103,7 @@ export default App
 
 */
 
+/*
 import React from "react"
 import Joke from "./Joke"
 
@@ -126,3 +136,183 @@ function App() {
 
 export default App
 
+*/
+
+/*
+
+import React from "react"
+import Product from "./Product"
+import productsData from "./vschoolProducts"
+
+function App() {
+    const productComponents = productsData.map(item => <Product key={item.id} product={item} />)
+   
+    return (
+        <div>
+            {productComponents}
+        </div>
+    )
+}
+
+export default App
+
+*/
+
+/* 
+import React from "react"
+
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Code goes here</h1>
+            </div>
+        )
+    }
+}
+
+export default App
+
+
+*/
+
+/*
+import React from "react"
+
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            answer: "Yes"
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Is state important to know? {this.state.answer}</h1>
+            </div>
+        )
+    }
+}
+
+export default App
+
+*/
+
+/*
+import React, {Component} from "react"
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            name: "Dog",
+            age: 16
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>{this.state.name}</h1>
+                <h3>{this.state.age} years old</h3>
+            </div>
+        )
+    }
+}
+
+export default App
+
+*/
+
+/*
+import React, {Component} from "react"
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            isLoggedIn: true,
+            logText: ""
+        }
+    }
+    
+    boolTest() {
+        {if(this.state.isLoggedIn == true){
+            this.state.logText = "in"
+        } else {
+            this.state.logText = "out"
+        }}
+    }
+
+    render() {
+        this.boolTest()
+        console.log(this.state.logText)
+        return (
+            <div>
+                <h1>You are currently logged {this.state.logText} </h1>
+            </div>
+        )
+    }
+}
+
+export default App
+
+*/
+
+/*
+import { render } from "@testing-library/react"
+import React from "react"
+
+function handleClick() {
+    console.log("I was clicked")
+}
+class App extends React.Component {
+    render() {
+        return(
+            <div>
+                <img src="https://www.fillmurray.com/200/100"/>
+                <br/>
+                <br/>
+                <button onClick={handleClick}>Click me</button>
+            </div>
+        )
+    }
+}
+
+export default App
+
+*/
+
+import React from "react"
+
+
+class App extends React.Component {
+    constructor() {
+        super() 
+        this.state = {
+            count: 0
+        }
+        this.increase = this.increase.bind(this)
+    }
+
+    increase() {
+        this.setState(prevState => {
+            return {
+                count: prevState.count + 1
+            }
+        })
+    }
+
+    render() {
+        return(
+            <div>
+                <h1>{this.state.count}</h1>
+                <button onClick={this.increase}>Change!</button>
+            </div>
+        )
+    }
+}
+
+export default App

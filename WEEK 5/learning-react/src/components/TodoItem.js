@@ -1,10 +1,15 @@
 import React from "react"
+import './style.css'
 
-function TodoItem() {
+function TodoItem(props) {
     return (
         <div className="item">
-            <input type="checkbox"/>
-            <p> Placeholder here</p>
+            <input 
+                type="checkbox" 
+                checked={props.item.completed} 
+                onChange={() => console.log("Changed")}
+            />
+            <p>{props.item.text}</p>
         </div>
     )
 }
