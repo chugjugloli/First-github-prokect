@@ -43,20 +43,40 @@ import TodoItem from "./TodoItem"
 import todosData from "./todosData"
 import './style.css'
 
+
+function check() {
+     
+}
 class App extends React.Component {
     constructor(){
         super()
         this.state = {
-            todoComponents: todosData.map(item => <TodoItem key={item.id} item={item}/>)
+            todos: todosData
         }
+        this.handleChange = this.handleChange.bind(this)
     }
 
+    handleChange(id) {
+        console.log("changed", id)
+        this.setState(prevState =>{
+            const updatedTodos = prevState.todos.map(todo => {
+                if (todo.id === id) {
+                    todo.completed = !todo.completed
+                }
+                return todo
+            })
+            return {
+                todos: updatedTodos
+            }
+        })
+    }
 
     render(){
+        const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
 
         return (
             <div className="list">
-                {this.state.todoComponents}
+                {todoItems}
             </div>
         )
     }
@@ -285,8 +305,9 @@ export default App
 
 */
 
-import React from "react"
+/*
 
+import React from "react"
 
 class App extends React.Component {
     constructor() {
@@ -310,6 +331,73 @@ class App extends React.Component {
             <div>
                 <h1>{this.state.count}</h1>
                 <button onClick={this.increase}>Change!</button>
+            </div>
+        )
+    }
+}
+
+export default App
+
+*/
+
+/*
+import React, {Component} from "react"
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {}
+    }
+    
+    componentDidMount(){
+        // Get the data I need
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+        //erturn if want to update
+        //return false if not 
+    }
+
+    componentWillUnmount(){
+        //teardown or cleanup your code
+        // remove event listener (run code while someone scrolls)
+    }
+
+    render(){
+        return (
+            <div>
+                Code goes here
+            </div>
+        )
+    }
+}
+
+export default App
+
+*/
+
+import React, {Component} from "react"
+import Conditional from "./Conditional"
+class App extends Component {
+    constructor(){
+        super()
+        this.state = {
+            isLoading: true
+        }
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
+            })
+        }, 3500)
+    }
+
+    render() {
+        return (
+            <div>
+                <Conditional isLoading={this.state.isLoading} />
             </div>
         )
     }
