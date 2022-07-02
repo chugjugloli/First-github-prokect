@@ -411,25 +411,202 @@ class App extends Component {
 export default App
 */
 
-import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers"
+/*
+
+ - ------ BROKEN!!!!! ------
 import React from "react"
 import LogBtn from "./LogBtn"
+import Log from "./Log"
 
+let bool = 2
 class App extends React.Component {
     constructor(){
         super()
         this.state = {
-            isLoggedIn: false
+            isLogged : Log
         }
-        this.isLoggedIn = this.isLoggedIn.bind(this)
+        this.updateLog = this.updateLog.bind(this)
+    }
+    
+    updateLog(id){
+        console.log("Clicked")
+        this.setState(prevState => {
+            const updatedLog = prevState.isLogged.map(id => {
+                if (id == 1) {
+                    return bool = 1
+                } else {
+                    return bool = 0
+                }
+            })
+            return {
+                Log : updatedLog
+            }
+        })
     }
 
     render(){
+        const finalLog = this.state.updatedLog.map(item => <logBtn key={item.id} item={item} handleChange={this.updateLog}/>)
+
+        // const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
         return (
             <div>
-                <h1>Hello User, you are currently {this.state.updatedLog}</h1>
-                
+                {finalLog}
             </div>
+        )
+    }
+}
+
+export default App
+
+*/
+
+/*
+import React from "react"
+class App extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            isLogged : false
+        }
+        this.handleClick = this.handleClick.bind(this)
+    }
+    
+    handleClick() {
+        this.setState(prevState => {
+            return {
+                isLoggedIn: !prevState.isLoggedIn
+            }
+        })
+    }
+    
+
+    render(){
+        let buttonText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN"
+        let userText = this.state.isLoggedIn ? "logged in" : "logged out"
+        return (
+            <div>
+                <h1>
+                    Hello User, you are currently {userText}
+                </h1>
+                <button onClick={this.handleClick}>{buttonText}</button>
+            </div>
+        )
+    }
+}
+
+export default App
+*/
+
+//https://reactjs.org/docs/forms.html
+import React, {Component} from "react"
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            firstName: "",
+            lastName: "",
+            isFriendly: true,
+            gender: "",
+            favColor: ""
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+        const {name, value, type, checked} = event.target
+        type === "checkbox" ? 
+            this.setState({
+                [name]: checked
+            }) : 
+            this.setState({
+                [name]: value
+            })
+    }
+
+    render() {
+        return (
+            <form>
+                <input 
+                    type="text" 
+                    value={this.state.firstName}
+                    name="firstName" 
+                    placeholder="First name" 
+                    onChange={this.handleChange}
+                />
+
+                <br/>
+
+                <input 
+                    type="text" 
+                    value={this.state.lastName}
+                    name="lastName" 
+                    placeholder="Last name" 
+                    onChange={this.handleChange}
+                />
+                
+
+                <br/>
+
+                <textarea 
+                    value={"Some default value"} 
+                    onChange={this.state.handleChange}
+                />
+
+                <br/>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="isFriendly"
+                        checked={this.state.isFriendly}
+                        onChange={this.state.handleChange}
+                    /> Is Friendly?
+                </label>
+
+                <br/>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        checked={this.state.gender === "male"}
+                        onChange={this.state.handleChange}
+                    /> Male
+                </label>
+
+                <br/>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        checked={this.state.gender === "female"}
+                        onChange={this.state.handleChange}
+                    /> Female
+                </label>
+
+                <br/>
+
+            <label>Favorite Color:</label>
+                <select 
+                    value={this.state.favColor}
+                    onChange={this.handleChange}
+                    name="favColor"
+                >
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+
+                <h1>{this.state.firstName} {this.state.lastName}</h1>
+                <h2>You are a {this.state.gender}</h2>
+                <h2>Your favorite color is {this.setState.favColor}</h2>
+            </form>
         )
     }
 }

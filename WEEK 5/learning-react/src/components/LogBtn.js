@@ -1,11 +1,17 @@
 import React from "react"
 
-function LogBtn() {
+function LogBtn(props) {
     return (
         <div>
-            <button>Log in/out</button>
+            <h1>
+            Hello User, you are currently {props.item.userText}
+            </h1>
+            <button onClick={(event) => props.updateLog(props.item.id)}
+            >
+                {props.item.btnText}
+            </button>
         </div>
     )
-} 
+}
 
 export default LogBtn
