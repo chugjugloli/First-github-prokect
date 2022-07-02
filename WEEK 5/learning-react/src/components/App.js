@@ -376,6 +376,7 @@ export default App
 
 */
 
+/*
 import React, {Component} from "react"
 import Conditional from "./Conditional"
 class App extends Component {
@@ -391,13 +392,43 @@ class App extends Component {
             this.setState({
                 isLoading: false
             })
-        }, 3500)
+        }, 1500)
     }
 
     render() {
         return (
             <div>
-                <Conditional isLoading={this.state.isLoading} />
+                {this.state.isLoading ?
+
+                <h1>Loading...</h1> :
+
+                <Conditional />}
+            </div>
+        )
+    }
+}
+
+export default App
+*/
+
+import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers"
+import React from "react"
+import LogBtn from "./LogBtn"
+
+class App extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            isLoggedIn: false
+        }
+        this.isLoggedIn = this.isLoggedIn.bind(this)
+    }
+
+    render(){
+        return (
+            <div>
+                <h1>Hello User, you are currently {this.state.updatedLog}</h1>
+                
             </div>
         )
     }
