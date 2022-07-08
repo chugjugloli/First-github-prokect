@@ -497,6 +497,8 @@ class App extends React.Component {
 export default App
 */
 
+/*
+
 //https://reactjs.org/docs/forms.html
 import React, {Component} from "react"
 
@@ -572,7 +574,7 @@ class App extends Component {
                         name="gender"
                         value="male"
                         checked={this.state.gender === "male"}
-                        onChange={this.state.handleChange}
+                        onChange={this.handleChange}
                     /> Male
                 </label>
 
@@ -584,7 +586,7 @@ class App extends Component {
                         name="gender"
                         value="female"
                         checked={this.state.gender === "female"}
-                        onChange={this.state.handleChange}
+                        onChange={this.handleChange}
                     /> Female
                 </label>
 
@@ -605,10 +607,26 @@ class App extends Component {
 
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
                 <h2>You are a {this.state.gender}</h2>
-                <h2>Your favorite color is {this.setState.favColor}</h2>
+                <h2>Your favorite color is {this.state.favColor}</h2>
+                <button>Submit</button>
             </form>
         )
     }
 }
 
 export default App
+
+*/
+
+import React, {Component} from "react"
+import Form from "./FormContainer"
+
+function App(){
+    return(
+        < Form/>
+    )
+}
+
+
+export default App
+
