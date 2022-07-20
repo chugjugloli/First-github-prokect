@@ -21,7 +21,8 @@ function App() {
     })
   }, []);
   function register(){
-    console.log('register');
+    document.body.classList.remove("hidden")
+    
     createUserWithEmailAndPassword(auth, 'email@email.com', 'test123')
       .then((user) => {
         console.log(user);
@@ -47,12 +48,22 @@ function App() {
     setUser({})
   }
   return (
-    <div className="App">
-      <button onClick={register}>Register</button>
-      <button onClick={login}>Login</button>
-      <button onClick={logout}>Logout</button>
-      {loading ? 'loading...' : user.email}
-    </div>
+    <nav>
+      <div>
+        <button onClick={register}>Register</button>
+        <button onClick={login}>Login</button>
+        <button onClick={logout}>Logout</button>
+        
+      </div>
+      <div>
+        {loading ? 'loading...' : user.email}
+      </div>
+      <br/>
+      <p>Register here:</p>
+      <form className='hidden'>
+        <input defaultValue="email"/>
+      </form>
+    </nav>
   );
 }
 
