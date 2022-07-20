@@ -1,5 +1,6 @@
 import React from 'react'
-import {auth} from "./firebase/init"
+import {auth, db} from "./firebase/init"
+import {addDoc, collection, ddDoc} from "firebase/firestore"
 import { 
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -11,6 +12,14 @@ import {
 function App() {
   const [user, setUser] = React.useState({})
   const [loading, setLoading] = React.useState(true)
+
+  function createPost(){
+    const post = {
+      title: "Land a $100k job",
+      description: "Finish Frontend Simplified",
+    };
+    addDoc(collection(db, "posts"), post)
+  }
   React.useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setLoading(false)
@@ -48,22 +57,13 @@ function App() {
     setUser({})
   }
   return (
-    <nav>
-      <div>
-        <button onClick={register}>Register</button>
-        <button onClick={login}>Login</button>
-        <button onClick={logout}>Logout</button>
-        
-      </div>
-      <div>
-        {loading ? 'loading...' : user.email}
-      </div>
-      <br/>
-      <p>Register here:</p>
-      <form className='hidden'>
-        <input defaultValue="email"/>
-      </form>
-    </nav>
+    <div>
+      <button onClick={register}>Register</button>
+      <button onClick={login}>Login</button>
+      <button onClick={logout}>Logout</button>
+      {loading ? 'loading...' : user.email}
+      <button onClick={createPost}>Create Post</button>
+    </div>
   );
 }
 
